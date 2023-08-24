@@ -70,10 +70,10 @@ C Ad Hoc test for CIOI
 	WRITE (*,*) 7,LSVAR,SVAR
 
 C Now test the CIOTBE entry
-	write (*,*) '(''0Nu testen we CIOTBE''/)'
+	WRITE (*,*) '(''0Nu testen we CIOTBE''/)'
 
 	DO 100 I=1,100
-	CALL CIOFX ('Enter an element of ARRAY',ARRAY(I),'$',*20)
+	CALL CIOFX ('Enter an element of ARRAY',ARRAY(I),'$',20)
 	N = I
 	CALL CIOTBE (LEMPTY)
 	IF (LEMPTY) GOTO 110

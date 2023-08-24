@@ -12,7 +12,7 @@ C	Written by M.N. Harakeh.
 	COMMON /INT/ DR,KR
 	DIMENSION R2(3)
 	CHARACTER DEF*1,KMD*2,TYPE(2)*7
-	COMMON /DEFSR/ DEF
+C	COMMON /DEFSR/ DEF
 	DATA TYPE(1),TYPE(2) /'VOLUME ','SURFACE'/
 	DATA LDFRM /2,4,6/
 	DATA DEF /'N'/
@@ -58,10 +58,10 @@ C	Read input parameters.
 	2     /' RR/(A**1/3) :',F9.4,' Fm,   AR :',F6.4,' Fm'
 	3     /' MAX. INTEG. RADIUS :'4X,F8.3,'   INTEG. STEP :',F5.3)
 	IF(INX.EQ.1) THEN
-	  CALL RFERMI(R(2),AR(2),2,R2(2))
+	  CALL RFERMI(R(2),AR(2),2,R2(2),DEFSR)
 	ELSE
-	  CALL RFERMI(R(2),AR(2),1,R2_1)
-	  CALL RFERMI(R(2),AR(2),-1 ,R_1)
+	  CALL RFERMI(R(2),AR(2),1,R2_1,DEFSR)
+	  CALL RFERMI(R(2),AR(2),-1 ,R_1,DEFSR)
 	  R2(2)=2*R2_1/R_1
 	ENDIF
 
